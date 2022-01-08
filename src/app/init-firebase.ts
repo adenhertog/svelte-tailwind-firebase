@@ -1,4 +1,6 @@
-import type { FirebaseApp } from 'firebase/app';
+import { FirebaseApp, initializeApp } from 'firebase/app';
+import 'firebase/auth'
+import 'firebase/firestore'
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyBFeRKPvmob0L0S7UX0Mzsjz5aG6r60imw',
@@ -13,10 +15,7 @@ let firebaseAppInstance: FirebaseApp;
 
 export const initFirebase = async (): Promise<FirebaseApp> => {
 	if (!firebaseAppInstance) {
-		const fb = (await import('firebase/app')).default;
-		await import('firebase/auth');
-		await import('firebase/firestore');
-		firebaseAppInstance = fb.initializeApp(firebaseConfig);
+		firebaseAppInstance = initializeApp(firebaseConfig);
 	}
 
 	return firebaseAppInstance;

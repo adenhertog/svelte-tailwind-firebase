@@ -1,4 +1,4 @@
-import type { Firestore } from 'firebase/firestore';
+import { Firestore, getFirestore as createFirestore } from 'firebase/firestore';
 import { initFirebase } from './init-firebase';
 
 let firestoreInstance: Firestore = undefined;
@@ -6,8 +6,7 @@ let firestoreInstance: Firestore = undefined;
 export async function getFirestore(): Promise<Firestore> {
 	if (!firestoreInstance) {
 		const firebase = await initFirebase();
-		const firestore = await import('firebase/firestore');
-		firestoreInstance = firestore.getFirestore(firebase);
+		firestoreInstance = createFirestore(firebase);
 	}
 	return firestoreInstance;
 }

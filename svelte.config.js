@@ -1,3 +1,4 @@
+
 import staticAdapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import path from 'path';
@@ -9,6 +10,9 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
+    // Force Sveltekit to run in SPA mode
+    // See https://github.com/sveltejs/kit/tree/master/packages/adapter-static#spa-mode
+    // Can be replaced with https://github.com/jthegedus/svelte-adapter-firebase for SSR functionality
 		adapter: staticAdapter({
 			fallback: 'index.html'
 		}),
