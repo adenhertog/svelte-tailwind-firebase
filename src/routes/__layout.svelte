@@ -1,3 +1,15 @@
+<script context="module" lang="ts">
+	import { initFirebase } from '../app/init-firebase';
+
+	/** @type {import('@sveltejs/kit').Load} */
+	export async function load() {
+		await initFirebase();
+		return {
+			props: {}
+		};
+	}
+</script>
+
 <script lang="ts">
 	import '../app.css';
 </script>
