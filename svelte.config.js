@@ -21,6 +21,9 @@ const config = {
 		target: '#svelte',
 
 		vite: {
+      build: {
+        sourcemap: true
+      },
 			resolve: {
 				alias: {
 					'@': path.resolve('./src')

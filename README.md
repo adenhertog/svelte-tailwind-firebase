@@ -9,7 +9,7 @@ A boilerplate or starter template containing:
 - **Jest** - Test runner
 - **ESLint** - Linting
 - **Prettier** - Code formatting
-- **cssnano** - Minification
+- **cssnano** - Css minification
 - **Vite** - Prod packaging and dev HMR
 - **Github actions** - Basic CI/CD pipeline for firebase
 
