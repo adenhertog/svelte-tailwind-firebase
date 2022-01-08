@@ -72,3 +72,7 @@ version of all libraries.
 
 Currently the app is configured to use [Firestore Lite](https://firebase.google.com/docs/firestore/solutions/firestore-lite) to reduce the vendor bundle size. If you need snapshot listeners and other advanced firestore features then you may need 
 to run the full fat version by replacing references of `firebase/firestore/lite` to `firebase/firestore`.
+
+### Service Workers
+
+A basic service worker spec is provided in `src/service-worker.ts`. When the app loads, the service worker should fetch all remaining assets and cache locally to avoid subsequent wait times and also allow the app to function offline.
