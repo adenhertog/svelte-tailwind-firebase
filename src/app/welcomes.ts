@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore/lite';
 import { getFirestore } from './firestore';
 
 export const getRandomWelcome = async (): Promise<string> => {

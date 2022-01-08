@@ -1,4 +1,4 @@
-import { Firestore, getFirestore as createFirestore } from 'firebase/firestore';
+import { Firestore, getFirestore as createFirestore } from 'firebase/firestore/lite';
 import { initFirebase } from './init-firebase';
 
 let firestoreInstance: Firestore = undefined;

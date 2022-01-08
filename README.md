@@ -67,3 +67,8 @@ At the time of writing this, Sveltekit was still in beta. As such some of the li
 
 https://snyk.io/ will keep the package versions evergreen in this repo, so when you clone it you should have the latest
 version of all libraries. 
+
+### Firestore lite
+
+Currently the app is configured to use [Firestore Lite](https://firebase.google.com/docs/firestore/solutions/firestore-lite) to reduce the vendor bundle size. If you need snapshot listeners and other advanced firestore features then you may need 
+to run the full fat version by replacing references of `firebase/firestore/lite` to `firebase/firestore`.
