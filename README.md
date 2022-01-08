@@ -1,15 +1,20 @@
-# svelete-tailwind-firebase
+# svelete-tailwind-firebase template
 
-A boilerplate containing:
+A boilerplate or starter template containing:
 
-- SvelteKit
-- Tailwind CSS
-- Firebase
-- Typescript
-- Jest
-- ESLint
-- cssnano
-- Vite\* (This comes by default in SvelteKit)
+- **SvelteKit** - front end framework
+- **Tailwind CSS** - CSS framework
+- **Firebase** - Hosting and database storage
+- **Typescript** - Type system
+- **Jest** - Test runner
+- **ESLint** - Linting
+- **Prettier** - Code formatting
+- **cssnano** - Minification
+- **Vite** - Prod packaging and dev HMR
+- **Github actions** - Basic CI/CD pipeline for firebase
+
+👉 This project is built and hosted at https://svelte-typescript-firebase.web.app/ 👈
+
 
 ## Installing
 
@@ -19,9 +24,14 @@ After forking this repo, install the dependencies:
 npm install
 ```
 
+Next, update the following files with your firebase configuration:
+
+- .firebaserc
+- init-firebaes.ts
+
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+A development server that launches at http://localhost:3000 can be run with the following command:
 
 ```bash
 npm run dev
@@ -32,10 +42,28 @@ npm run dev -- --open
 
 ## Building
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+Building and deployment should happen automatically using github actions once you commit your changes to `master`.
+
+To do this manually from your local machine, run:
 
 ```bash
 npm run build
+firebase deploy # You'll need to have `firebase-tools` installed globally 
 ```
 
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+## Where to from here?
+
+### Server Side Rendering
+
+Whilst this boilerplate uses Sveltekit, it disables the use of SSR by using `@sveltejs/adapter-static` configured inside
+svelte.config.js.
+
+To enable SSR rendering via firebase functions, swap this adapter out for https://www.npmjs.com/package/svelte-adapter-firebase
+instead. 
+
+### Sveltekit beta
+
+At the time of writing this, Sveltekit was still in beta. As such some of the library code may change prior to v1 being released.
+
+https://snyk.io/ will keep the package versions evergreen in this repo, so when you clone it you should have the latest
+version of all libraries. 
