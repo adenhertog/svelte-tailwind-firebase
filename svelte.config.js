@@ -1,5 +1,6 @@
 import firebaseAdapter from 'svelte-adapter-firebase'
 import preprocess from 'svelte-preprocess'
+import path from 'path'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +12,15 @@ const config = {
 		adapter: firebaseAdapter(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+
+    vite: {
+      resolve: {
+        alias: {
+          '@': path.resolve('./src')
+        }
+      }
+    }
 	}
 }
 

@@ -8,6 +8,8 @@ A boilerplate containing:
 - Typescript
 - Jest
 - ESLint
+- cssnano
+- Vite* (This comes by default in SvelteKit)
 
 ## Installing
 
