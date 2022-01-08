@@ -1,6 +1,6 @@
-import firebaseAdapter from 'svelte-adapter-firebase'
-import preprocess from 'svelte-preprocess'
-import path from 'path'
+import staticAdapter from '@sveltejs/adapter-static';
+import preprocess from 'svelte-preprocess';
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,19 +9,21 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: firebaseAdapter(),
+		adapter: staticAdapter({
+			fallback: 'index.html'
+		}),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 
-    vite: {
-      resolve: {
-        alias: {
-          '@': path.resolve('./src')
-        }
-      }
-    }
+		vite: {
+			resolve: {
+				alias: {
+					'@': path.resolve('./src')
+				}
+			}
+		}
 	}
-}
+};
 
-export default config
+export default config;

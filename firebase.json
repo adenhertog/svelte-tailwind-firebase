@@ -1,0 +1,30 @@
+{
+	"emulators": {
+		"auth": {
+			"port": 9099,
+			"host": "0.0.0.0"
+		},
+		"firestore": {
+			"port": 9098,
+			"host": "0.0.0.0"
+		},
+		"ui": {
+			"host": "0.0.0.0",
+			"enabled": true
+		}
+	},
+	"hosting": {
+		"public": "build",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	},
+	"firestore": {
+		"rules": "firestore.rules",
+		"indexes": "firestore.indexes.json"
+	}
+}

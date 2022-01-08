@@ -9,7 +9,7 @@ A boilerplate containing:
 - Jest
 - ESLint
 - cssnano
-- Vite* (This comes by default in SvelteKit)
+- Vite\* (This comes by default in SvelteKit)
 
 ## Installing
 
